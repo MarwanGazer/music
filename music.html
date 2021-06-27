@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music</title>
+    <link rel="stylesheet" href="music.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <script src="https://kit.fontawesome.com/4202a788fe.js" crossorigin="anonymous"></script>
+<link href="https://fonts.googleapis.com/css2?family=Calligraffitti&family=Caveat:wght@500&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <i class="fas fa-bars"></i>
+    <iframe src="silence.mp3" allow="autoplay" id="audio"></iframe>
+    <audio id="player" autoplay controls><source src="piano.mp3" type="audio/mp3"></audio>
+    <div class="container">
+        <section class="left">
+            <div class="triangle"></div>
+            <h2>Ma<span>ro</span></h2>
+            <h1>the <br> real <br> sound</h1>
+        </section>
+        <section class="right">
+            <ul>
+                <li><a href="#">home</a></li>
+                <li><a href="#">about</a></li>
+                <li><a href="#">music</a></li>
+                <li><a href="#">contact</a></li>
+            </ul>
+            <p>listen to music</p>
+            <img id="play" src="play.png">
+        </section>
+        <audio id="lily" src="lily.MP3"></audio>
+    </div>
+    <script>
+        var audio=document.getElementById("audio")
+        var piano=document.getElementById("player")
+        var icon=document.getElementById("play");
+        var lily = document.getElementById("lily")
+        function music (){
+            if(lily.paused){
+                audio.play()
+                piano.play()
+            }else{
+                audio.pause()
+                piano.pause()
+            }
+        }
+        icon.onclick = function(){
+            if(lily.paused){
+                lily.play();
+                icon.src="pause.png";
+                audio.pause()
+                piano.pause()
+            }else{
+                lily.pause();
+                icon.src="play.png"
+                audio.play()
+                piano.play()
+            }
+        }
+    </script>
+</body>
+
+</html>
